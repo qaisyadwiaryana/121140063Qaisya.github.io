@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Table Data</title>
+    <link rel="stylesheet" type="text/css" href="styletable.css">
+</head>
+<body>
+    <header>
+        <h1>Tabel Data Pendaftar</h1>
+    </header>
+    <div class="container">
+         <nav>
+            <a href="index.html"><i class="fa fa-home"></i><span>Home</span></a>
+        </nav>
+        <main>
+            <h2>Data Mahasiswa</h2>
+            <table>
+                <tr>
+                    <th>Nama</th>
+                    <th>NIM</th>
+                    <th>Program Studi</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Jenis Kelamin</th>
+                    <th>Tanggal Lahir</th>
+                    <th>Alamat</th>
+                </tr>
+                <script>
+                    const mahasiswaData = JSON.parse(localStorage.getItem("mahasiswaData"));
+                    if (mahasiswaData) {
+                        mahasiswaData.forEach(function (data) {
+                            document.write("<tr>");
+                            document.write("<td>" + data.nama + "</td>");
+                            document.write("<td>" + data.nim + "</td>");
+                            document.write("<td>" + data.prodi + "</td>");
+                            document.write("<td>" + data.email + "</td>");
+                            document.write("<td>" + data.password + "</td>");
+                            document.write("<td>" + data.gender + "</td>");
+                            document.write("<td>" + data.tgl_lahir + "</td>");
+                            document.write("<td>" + data.alamat + "</td>");
+                            document.write("</tr>");
+                        });
+                    }
+                </script>
+            </table>
+        </main>
+    </div>
+    <footer>
+        <p>&copy; 2023 Website Pendaftaran Mahasiswa - 121140100 - Muhamad Ivan</p>
+    </footer>
+</body>
+</html>
